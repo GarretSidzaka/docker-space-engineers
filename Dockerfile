@@ -31,7 +31,6 @@ RUN apt-get update \
         x11-xserver-utils \
         xfce4 \
         xfce4-goodies \
-
         xorgxrdp \
         xrdp \
     && rm -rf /var/lib/apt/lists/*
