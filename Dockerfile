@@ -6,6 +6,10 @@ FROM debian:$TAG
 RUN apt-get update \
     && DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
         build-essential \
+        iproute \
+        vim \
+        ping \
+        telnet \
         dpkg-dev \
         git \
         apt-transport-https \
