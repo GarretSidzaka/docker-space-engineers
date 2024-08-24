@@ -9,7 +9,7 @@ Images are built weekly using the Debian Docker image with the 'latest' tag.
 Download the latest version of the image:
 
 ```bash
-docker pull GarretSidzaka/docker-remote-desktop
+docker pull GarretSidzaka/ocker-remote-desktop-wine-nosound
 ```
 
 To run with an interactive bash session:
@@ -20,7 +20,7 @@ docker run -it \
     --hostname="$(hostname)" \
     --publish="3389:3389/tcp" \
     --name="remote-desktop" \
-    GarretSidzaka/docker-remote-desktop:latest /bin/bash
+    GarretSidzaka/ocker-remote-desktop-wine-nosound:latest /bin/bash
 ```
 
 To start as a detached daemon:
@@ -31,7 +31,7 @@ docker run --detach \
     --hostname="$(hostname)" \
     --publish="3389:3389/tcp" \
     --name="remote-desktop" \
-    GarretSidzaka/docker-remote-desktop:latest
+    GarretSidzaka/ocker-remote-desktop-wine-nosound:latest
 ```
 
 To stop the detached container:
@@ -61,9 +61,9 @@ Password: debian
 First, clone the GitHub repository:
 
 ```bash
-git clone https://github.com/ilichevns/docker-remote-desktop.git
+git clone https://github.com/GarretSidzaka/ocker-remote-desktop-wine-nosound.git
 
-cd docker-remote-desktop
+cd docker-remote-desktop-wine-nosound
 ```
 
 You can then build the image with the supplied script:
@@ -75,7 +75,7 @@ You can then build the image with the supplied script:
 Or run the following `docker` command:
 
 ```bash
-docker build -t docker-remote-desktop .
+docker build -t docker-remote-desktop-wine-nosound .
 ```
 
 ## Running local images with scripts
