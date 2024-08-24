@@ -9,7 +9,7 @@ Images are built weekly using the Debian Docker image with the 'latest' tag.
 Download the latest version of the image:
 
 ```bash
-docker pull GarretSidzaka/ocker-remote-desktop-wine-nosound
+docker pull GarretSidzaka/docker-remote-desktop-wine-nosound
 ```
 
 To run with an interactive bash session:
@@ -20,7 +20,7 @@ docker run -it \
     --hostname="$(hostname)" \
     --publish="3389:3389/tcp" \
     --name="remote-desktop" \
-    GarretSidzaka/ocker-remote-desktop-wine-nosound:latest /bin/bash
+    GarretSidzaka/docker-remote-desktop-wine-nosound:latest /bin/bash
 ```
 
 To start as a detached daemon:
@@ -31,7 +31,7 @@ docker run --detach \
     --hostname="$(hostname)" \
     --publish="3389:3389/tcp" \
     --name="remote-desktop" \
-    GarretSidzaka/ocker-remote-desktop-wine-nosound:latest
+    GarretSidzaka/docker-remote-desktop-wine-nosound:latest
 ```
 
 To stop the detached container:
@@ -61,7 +61,7 @@ Password: debian
 First, clone the GitHub repository:
 
 ```bash
-git clone https://github.com/GarretSidzaka/ocker-remote-desktop-wine-nosound.git
+git clone https://github.com/GarretSidzaka/docker-remote-desktop-wine-nosound.git
 
 cd docker-remote-desktop-wine-nosound
 ```
