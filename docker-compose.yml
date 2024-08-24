@@ -2,14 +2,15 @@ version: "3.5"
 
 services:
   drdwns:
-    image: alinmear/docker-conanexiles:latest
+    image: docker-remote-desktop-debian-wine-nosound:latest
+    hostname: docker-desktop
     restart: unless-stopped
     environment:
+        - TZ=UTC
     ports:
-        - 7777:7777/udp
-        - 7778:7778/udp
-        - 27015:27015/udp
+        - "3389:3389/tcp"
     volumes:
-        - data:/conanexiles
+        - data:/data
+        
 volumes:
     data: 
