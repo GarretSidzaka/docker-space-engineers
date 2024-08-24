@@ -1,7 +1,5 @@
 # docker-remote-desktop
 
-[![build](https://github.com/ilichevns/docker-remote-desktop/actions/workflows/build.yml/badge.svg)](https://github.com/ilichevns/docker-remote-desktop/actions/workflows/build.yml)
-
 Docker image with RDP server using [xrdp](http://xrdp.org) on Debian with [XFCE](https://xfce.org).
 
 Images are built weekly using the Debian Docker image with the 'latest' tag.
@@ -11,7 +9,7 @@ Images are built weekly using the Debian Docker image with the 'latest' tag.
 Download the latest version of the image:
 
 ```bash
-docker pull ilichevns/docker-remote-desktop
+docker pull GarretSidzaka/docker-remote-desktop
 ```
 
 To run with an interactive bash session:
@@ -22,7 +20,7 @@ docker run -it \
     --hostname="$(hostname)" \
     --publish="3389:3389/tcp" \
     --name="remote-desktop" \
-    ilichevns/docker-remote-desktop:latest /bin/bash
+    GarretSidzaka/docker-remote-desktop:latest /bin/bash
 ```
 
 To start as a detached daemon:
@@ -33,7 +31,7 @@ docker run --detach \
     --hostname="$(hostname)" \
     --publish="3389:3389/tcp" \
     --name="remote-desktop" \
-    ilichevns/docker-remote-desktop:latest
+    GarretSidzaka/docker-remote-desktop:latest
 ```
 
 To stop the detached container:
