@@ -1,1 +1,15 @@
+version: "3.5"
 
+services:
+  drdwns:
+    image: alinmear/docker-conanexiles:latest
+    restart: unless-stopped
+    environment:
+    ports:
+        - 7777:7777/udp
+        - 7778:7778/udp
+        - 27015:27015/udp
+    volumes:
+        - data:/conanexiles
+volumes:
+    data: 
