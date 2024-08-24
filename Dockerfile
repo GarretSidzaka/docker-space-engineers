@@ -8,7 +8,7 @@ RUN apt-get update \
         build-essential \
         iproute2 \
         vim \
-        ping \
+        iputils-ping \
         telnet \
         dpkg-dev \
         git \
