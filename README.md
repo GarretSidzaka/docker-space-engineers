@@ -1,4 +1,4 @@
-# docker-remote-desktop
+# docker-remote-desktop-wine-nosound
 
 Docker image with RDP server using [xrdp](http://xrdp.org) on Debian with [XFCE](https://xfce.org).
 
