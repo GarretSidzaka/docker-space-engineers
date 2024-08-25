@@ -9,6 +9,8 @@ RUN apt-get update \
         iproute2 \
         vim \
         iputils-ping \
+        fonts-wine \
+        ttf-mscorefonts-installer \
         telnet \
         dpkg-dev \
         git \
