@@ -3,6 +3,9 @@ ARG TAG=latest
 
 FROM debian:$TAG
 
+#install non free repo for wine dependancies
+RUN echo "deb http://deb.debian.org/debian $(grep VERSION_CODENAME= /etc/os-release | cut -d= -f2) contrib non-free" > /etc/apt/sources.list.d/contrib.list
+
 RUN apt-get update \
     && DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
         build-essential \
