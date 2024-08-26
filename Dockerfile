@@ -16,6 +16,7 @@ RUN apt-get update \
         ttf-mscorefonts-installer \
         telnet \
         dpkg-dev \
+        man-db \
         git \
         apt-transport-https \
         ca-certificates \
