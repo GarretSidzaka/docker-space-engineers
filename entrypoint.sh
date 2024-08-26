@@ -15,3 +15,5 @@ else
     /usr/sbin/xrdp
     exec "$@"
 fi
+
+/usr/bin/winetricks -q win10
