@@ -55,7 +55,7 @@ RUN wget -nv -O- https://dl.winehq.org/wine-builds/winehq.key | APT_KEY_DONT_WAR
 RUN wget -nv -O /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
     && chmod +x /usr/bin/winetricks
 
-RUN /usr/bin/winetricks -q win64
+#RUN /usr/bin/winetricks -q win64
 #RUN /usr/bin/winetricks -q win64 msdelta vkd3d vcrun2022 dxvk2030 
 
 # Download gecko and mono installers
