@@ -55,7 +55,8 @@ RUN wget -nv -O- https://dl.winehq.org/wine-builds/winehq.key | APT_KEY_DONT_WAR
 RUN wget -nv -O /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
     && chmod +x /usr/bin/winetricks
 
-RUN /usr/bin/winetricks win10
+RUN /usr/bin/winetricks -q win64
+#RUN /usr/bin/winetricks -q win64 msdelta vkd3d vcrun2022 dxvk2030 
 
 # Download gecko and mono installers
 COPY download_gecko_and_mono.sh /root/download_gecko_and_mono.sh
@@ -65,6 +66,8 @@ RUN chmod +x /root/download_gecko_and_mono.sh \
 # Configure locale for unicode
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
+ENV WINEARCH=win64
+ENV WINEPREFIX=/root/.wine
 
 #COPY --from=builder /usr/lib/pulse-*/modules/module-xrdp-sink.so /usr/lib/pulse-*/modules/module-xrdp-source.so /var/lib/xrdp-pulseaudio-installer/
 COPY entrypoint.sh /usr/bin/entrypoint
