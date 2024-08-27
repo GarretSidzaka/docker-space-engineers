@@ -16,5 +16,5 @@ else
     exec "$@"
 fi
 
-/usr/bin/winetricks 
+#/usr/bin/winetricks 
 #/usr/bin/winetricks -q win64 msdelta vkd3d vcrun2022 dxvk2030
