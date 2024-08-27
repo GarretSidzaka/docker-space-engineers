@@ -16,4 +16,3 @@ else
     exec "$@"
 fi
 
-/usr/bin/winetricks -q win10
