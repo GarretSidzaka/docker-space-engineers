@@ -1,16 +1,17 @@
 version: "3.5"
-
 services:
   drdwns:
-    image: docker-remote-desktop-debian-wine-nosound:latest
+    image: garretsidzaka/docker-remote-desktop-wine-nosound:latest
     hostname: docker-desktop
     restart: unless-stopped
     environment:
         - TZ=UTC
+        - WINEARCH=win64
+        - WINEPREFIX=/root/.wine
     ports:
         - "3389:3389/tcp"
     volumes:
-        - data:/data
-        
+        - drdwine:/root/.wine
 volumes:
-    data: 
+  drdwine:
+
