@@ -55,11 +55,24 @@ RUN wget -nv -O- https://dl.winehq.org/wine-builds/winehq.key | APT_KEY_DONT_WAR
 # Install winetricks
 RUN wget -nv -O /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
     && chmod +x /usr/bin/winetricks
+ 
+ENV WINEDEBUG=fixme-all
+ENV WINEPREFIX=/root/.wine
+ENV WINEARCH=win64
 
-RUN /usr/bin/winetricks -q win11 msdelta vkd3d dxvk2030 
-#RUN /usr/bin/winetricks -q win11 msdelta vkd3d vcrun2022 dxvk2030 
-
-# Download gecko and mono installers
+RUN /usr/bin/winetricks -q win11
+RUN sleep 1
+RUN /usr/bin/winetricks -q msxml6 
+RUN sleep 1
+RUN /usr/bin/winetricks -q dotnet45 
+RUN sleep 1
+RUN /usr/bin/winetricks -q msdelta 
+RUN sleep 1
+RUN /usr/bin/winetricks -q vkd3d 
+RUN sleep 1
+RUN /usr/bin/winetricks -q dxvk2030 
+RUN sleep 1
+RUN /usr/bin/winetricks -q corefonts 
 COPY download_gecko_and_mono.sh /root/download_gecko_and_mono.sh
 RUN chmod +x /root/download_gecko_and_mono.sh \
     && /root/download_gecko_and_mono.sh "$(wine --version | sed -E 's/^wine-//')"
@@ -67,9 +80,6 @@ RUN chmod +x /root/download_gecko_and_mono.sh \
 # Configure locale and environment 
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
-ENV WINEDEBUG=fixme-all
-ENV WINEARCH=win64
-ENV WINEPREFIX=/root/.wine
 
 COPY entrypoint.sh /usr/bin/entrypoint
 EXPOSE 3389/tcp
